@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak private var button: UIButton!
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        button.rx.tap
+            .subscribe({ _ in
+                // do something
+            })
+            .disposed(by: disposeBag)
     }
-
-
 }
 

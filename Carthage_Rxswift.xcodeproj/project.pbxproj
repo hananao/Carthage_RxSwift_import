@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E10FC872159001E00B55C67 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E10FC862159001E00B55C67 /* RxSwift.framework */; };
 		5ECEAA182155FA35005B0132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECEAA172155FA35005B0132 /* AppDelegate.swift */; };
 		5ECEAA1A2155FA35005B0132 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECEAA192155FA35005B0132 /* ViewController.swift */; };
 		5ECEAA1D2155FA35005B0132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECEAA1B2155FA35005B0132 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E10FC862159001E00B55C67 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		5ECEAA142155FA35005B0132 /* Carthage_Rxswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carthage_Rxswift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECEAA172155FA35005B0132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ECEAA192155FA35005B0132 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E10FC872159001E00B55C67 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E10FC852159001E00B55C67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E10FC862159001E00B55C67 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5ECEAA0B2155FA35005B0132 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 				5ECEAA2B2155FA38005B0132 /* Carthage_RxswiftTests */,
 				5ECEAA362155FA38005B0132 /* Carthage_RxswiftUITests */,
 				5ECEAA152155FA35005B0132 /* Products */,
+				5E10FC852159001E00B55C67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +147,7 @@
 				5ECEAA102155FA35005B0132 /* Sources */,
 				5ECEAA112155FA35005B0132 /* Frameworks */,
 				5ECEAA122155FA35005B0132 /* Resources */,
+				5E10FC882159048B00B55C67 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +263,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E10FC882159048B00B55C67 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5ECEAA102155FA35005B0132 /* Sources */ = {
@@ -433,6 +467,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Carthage_Rxswift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +488,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Carthage_Rxswift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
